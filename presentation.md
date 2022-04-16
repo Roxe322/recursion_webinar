@@ -60,7 +60,7 @@ def pow(x, n):
 
 ```python
 def foo(msg):
-    print '{} foo'.format(msg)
+    print('{} foo'.format(msg))
 
 def main():
     msg = 'hello'
@@ -75,7 +75,7 @@ if __name__ == '__main__':
 
 # Что такое стек вызовов?
 
-![img](/home/pimiento/yap/callstack.png)
+![img](callstack.png)
 
 
 <a id="org9846ba3"></a>
@@ -94,7 +94,7 @@ if __name__ == '__main__':
 def inf_counter(x):
     print(x)
     return inf_counter(x+1)
-f(0)
+inf_counter(0)
 ```
 
 
@@ -139,7 +139,7 @@ print(factorial(5))
 
 # Вариант задачи для рекурсии
 
-Попробуйте реализовать решение <span class="underline"><span class="underline">[этой задачи](https://github.com/pimiento/recursion_webinar/blob/master/count_change.py)</span></span> без использования рекурсии \Winkey[][green!60!white]
+Попробуйте реализовать решение <span class="underline"><span class="underline">[этой задачи](https://github.com/Roxe322/recursion_webinar/blob/master/count_change.py)</span></span> без использования рекурсии \Winkey[][green!60!white]
 
 
 <a id="orgaf15ca0"></a>
@@ -173,7 +173,7 @@ print(factorial(5))
 # Пример когда рекурсия помогает
 
 -   **Задача:** У вас есть вложенная структура данных и вы хотите просуммировать значения поля X во всех объектах этой структуры.
--   **Решение задачи:** <https://github.com/pimiento/recursion_webinar/blob/master/recursion_example.py>
+-   **Решение задачи:** <https://github.com/Roxe322/recursion_webinar/blob/master/recursion_example.py>
 
 
 <a id="org46f786a"></a>

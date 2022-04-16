@@ -1,6 +1,4 @@
 #+TITLE: Рекурсия. Динамическое программирование. Строковые алгоритмы.
-#+EMAIL: @pvavilin
-#+AUTHOR: @pvavilin
 #+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:https://orgmode.org/org-info.js
 #+startup: beamer
 #+LaTeX_CLASS: beamer
@@ -48,7 +46,7 @@
         main()
   #+END_SRC
 * Что такое стек вызовов?
-  [[file:///home/pimiento/yap/callstack.png]]
+  [[file:callstack.png]]
 * Почему рекурсия это плохо
   - стек вызовов растёт вместе с ростом глубины рекурсии
   - можно попасть в бесконечную рекурсию и истратить всю память на стек вызовов
@@ -58,7 +56,7 @@
     def inf_counter(x):
         print(x)
         return inf_counter(x+1)
-    f(0)
+    inf_counter(0)
   #+END_SRC
 
 * Глубина рекурсии
@@ -147,7 +145,7 @@
 
     count_change(100)
   #+END_SRC
-  Попробуйте реализовать решение __[[https://github.com/pimiento/recursion_webinar/blob/master/count_change.py][этой задачи]]__ без использования рекурсии \Winkey[][green!60!white]
+  Попробуйте реализовать решение __[[https://github.com/Roxe322/recursion_webinar/blob/master/count_change.py][этой задачи]]__ без использования рекурсии \Winkey[][green!60!white]
 * Хвостовая рекурсия
   Рекурсия, не требующая действий с возвращённым результатом из шага рекурсии.
   #+BEGIN_SRC python :exports both :results output
@@ -167,7 +165,7 @@
   - __[[https://neopythonic.blogspot.com/2009/04/final-words-on-tail-calls.html][Почему TCO нет и не будет в Python]]__
 * Пример когда рекурсия помогает
   - Задача :: У вас есть вложенная структура данных и вы хотите просуммировать значения поля X во всех объектах этой структуры.
-  - Решение задачи :: https://github.com/pimiento/recursion_webinar/blob/master/recursion_example.py
+  - Решение задачи :: https://github.com/Roxe322/recursion_webinar/blob/master/recursion_example.py
   #+BEGIN_SRC python :exports none :tangle "recursion_example.py" :shebang "#!/usr/bin/env python3"
     company = {
         "sales": [
