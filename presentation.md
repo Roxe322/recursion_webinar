@@ -135,13 +135,6 @@ print(factorial(5))
     120
 
 
-<a id="orgc18c49b"></a>
-
-# Вариант задачи для рекурсии
-
-Попробуйте реализовать решение <span class="underline"><span class="underline">[этой задачи](https://github.com/Roxe322/recursion_webinar/blob/master/count_change.py)</span></span> без использования рекурсии \Winkey[][green!60!white]
-
-
 <a id="orgaf15ca0"></a>
 
 # Хвостовая рекурсия
@@ -156,8 +149,17 @@ def factorial(n, collected=1):
 
 print(factorial(5))
 ```
-
     120
+
+# Переписываем на цикл
+```python
+def factorial(n):
+    collected = 1
+    while n > 0:
+        collected *= n
+        n -= 1
+    return collected
+```
 
 
 <a id="org6f48bfa"></a>
@@ -166,6 +168,13 @@ print(factorial(5))
 
 -   Интерпретаторы/компиляторы могут оптимизировать хвостовую рекурсию (Tail Call Optimization) и не делать записей в стек вызовов, а подменять переменные в стеке вызовов, таким образом код получится равнозначным обычному циклу
 -   <span class="underline"><span class="underline">[Почему TCO нет и не будет в Python](https://neopythonic.blogspot.com/2009/04/final-words-on-tail-calls.html)</span></span>
+
+
+<a id="orgc18c49b"></a>
+
+# Вариант задачи для рекурсии
+
+Попробуйте реализовать решение <span class="underline"><span class="underline">[этой задачи](https://github.com/Roxe322/recursion_webinar/blob/master/count_change.py)</span></span> без использования рекурсии
 
 
 <a id="org2364f17"></a>
@@ -210,8 +219,7 @@ cache = {0: 1, 1: 1}
 
 def fib(n):
     if n not in cache:
-        cache[n] = \
-            fib(n=n-1) + fib(n=n-2)
+        cache[n] = fib(n=n-1) + fib(n=n-2)
     return cache[n]
 
 ```
@@ -257,7 +265,9 @@ print(lev("halt", "salt"))
 # Динамическое программирование в действии
 
 ```python
-def levenshtein(a: str, b: str, m: List[List[int]]) -> int:
+def levenshtein(
+    a: str, b: str, m: List[List[int]]
+) -> int:
     for i in range(1, len(a)):
         for j in range(1, len(b)):
             m[i][j] = min(

@@ -25,14 +25,13 @@
 => 3
 """
 
-def first_denomination(kinds_of_coins):
-    return {
+TYPES_OF_COINS = {
         1: 1,
         2: 5,
-        3: 10,
-        4: 25,
-        5: 50
-    }[kinds_of_coins]
+        # 3: 10,
+        # 4: 25,
+        # 5: 50
+    }
 
 
 def cc(amount, kinds_of_coins):
@@ -43,12 +42,12 @@ def cc(amount, kinds_of_coins):
         return 0
     return (
         cc(amount, kinds_of_coins - 1) +
-        cc(amount - first_denomination(kinds_of_coins), kinds_of_coins)
+        cc(amount - TYPES_OF_COINS[kinds_of_coins], kinds_of_coins)
     )
 
 
 def count_change(amount):
-    return cc(amount, 5)
+    return cc(amount, len(TYPES_OF_COINS))
 
 
-count_change(100)
+print(count_change(10))
